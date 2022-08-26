@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Fullstackbackend.model.Employee;
 import com.example.Fullstackbackend.repository.EmployeeRepository;
 
-@CrossOrigin(origins= "http://localhost:3000")
+//@CrossOrigin(origins= "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
@@ -29,9 +29,10 @@ public class EmployeeController {
 		return employeeRepository.findAll();
 	}
 	
-	//create employee rest api
-	@PostMapping("/employees")
+//	create employee rest api
+	@PostMapping("/Addemployees")
 	public Employee createEmployee(@RequestBody Employee employee) {
 		return employeeRepository.save(employee);
 	}
+	
 }

@@ -38,7 +38,7 @@ class CreateEmployeeComponent extends Component {
     }
 
     cancel(){
-        this.props.history.push('employees');
+        this.props.history.push('/employees');
     }
 
     
