@@ -10,6 +10,11 @@ class EmployeeService {
 
     createEmployee(employee){
         return axios.post("http://localhost:8080/api/v1/Addemployees", employee);
+       
+    }
+
+    getEmployeeById(employeeId){
+        return axios.get("http://localhost:8080/api/v1/employees" + '/' + employeeId);
     }
 
     // getEmployeeById(employeeId){

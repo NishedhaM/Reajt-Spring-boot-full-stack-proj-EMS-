@@ -9,7 +9,7 @@ class ListEmployeeComponent extends Component {
                 employees: []
         }
         this.addEmployee = this.addEmployee.bind(this);
-        // this.editEmployee = this.editEmployee.bind(this);
+        this.editEmployee = this.editEmployee.bind(this);
         // this.deleteEmployee = this.deleteEmployee.bind(this);
     }
 
@@ -24,6 +24,10 @@ class ListEmployeeComponent extends Component {
     // editEmployee(id){
     //     this.props.history.push(`/add-employee/${id}`);
     // }
+
+    editEmployee(id){
+        this.props.history.push('/update-employee/${id}')
+    }
 
     componentDidMount(){
         EmployeeService.getEmployees().then((res) => {
