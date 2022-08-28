@@ -11,7 +11,7 @@ class UpdateEmployeeComponent extends Component {
                 emailId:''
             }
 
-            this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this)
+            this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
             this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
             this.updateEmployee = this.updateEmployee.bind(this);
     }
@@ -20,7 +20,8 @@ class UpdateEmployeeComponent extends Component {
         EmployeeService.getEmployeeById(this.state.id).then((res) => {
             let employee = res.data;
             this.setState({firstName: employee.firstName,
-            lastName:employee.lastName,emailId:employee.emailId})
+            lastName:employee.lastName,emailId:employee.emailId
+        });
         });
     
     }
@@ -29,6 +30,9 @@ class UpdateEmployeeComponent extends Component {
         e.preventDefault();
         let employee = {firstName:this.state.firstName,lastName:this.state.lastName,emailId:this.state.emailId};
         console.log('employee => ' + JSON.stringify(employee));
+        EmployeeService.updateEmployee(employee, this.state.id).then( res => {
+            this.props.history.push('/employees');
+        });
         // EmployeeService.createEmployee(employee).then(res =>{
         //     this.props.history.push('/employees');
         // });
