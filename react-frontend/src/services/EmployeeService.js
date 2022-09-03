@@ -21,9 +21,9 @@ class EmployeeService {
         return axios.put("http://localhost:8080/api/v1/employees/update" + '/' + employeeId, employee);
     }
 
-    // deleteEmployee(employeeId){
-    //     return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId);
-    // }
+    deleteEmployee(employeeId){
+        return axios.delete("http://localhost:8080/api/v1/employees/delete" + '/' + employeeId);
+    }
 }
 
 export default new EmployeeService()
